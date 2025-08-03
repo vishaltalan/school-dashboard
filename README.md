@@ -1,12 +1,45 @@
-# React + Vite
+# School Dashboard
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A responsive school management dashboard built with React and Bootstrap. Easily manage students and staff, filter/search, and export data to Excel.
 
-Currently, two official plugins are available:
+## Features
+- Responsive UI for students and staff
+- Bootstrap styling (no Tailwind required)
+- Table filters, search, sorting, and pagination
+- Download table data as Excel file
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Getting Started
 
-## Expanding the ESLint configuration
+### 1. Clone the repository
+```
+git clone https://github.com/vishaltalan/your-school-dashboard.git
+cd your-school-dashboard
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Install dependencies
+```
+npm install
+```
+
+### 3. Run the development server
+```
+npm run dev
+```
+
+Open [http://localhost:5173](http://localhost:5173) in your browser to view the dashboard.
+
+## Project Structure
+- `src/components/ResponsiveTable.jsx` — Main table component
+- `src/components/FeesManagement.jsx` — Fees management UI
+- `src/App.jsx` — Main app entry point
+
+## Requirements
+- Node.js (v18 or newer recommended)
+- npm
+
+## Customization
+- You can edit table columns, filters, and export logic in `ResponsiveTable.jsx`.
+- For Bootstrap theming, edit your CSS or use Bootstrap utility classes.
+
+## License
+MIT
