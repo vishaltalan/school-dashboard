@@ -357,8 +357,8 @@ const FeesManagement = () => {
                           />
                         </td>
                         <td className="text-center">
-                        <button className="btn btn-sm btn-light" onClick={() => handleDelete(idx)} title="Study">
-                          <i className="bi bi-mortarboard" style={{color: 'black'}}></i>
+                        <button className="btn btn-sm btn-light" onClick={() => handleDelete(idx)} title="Delete">
+                          <i className="bi bi-trash" style={{color: 'black'}}></i>
                         </button>
                         </td>
                       </tr>
@@ -388,8 +388,8 @@ const FeesManagement = () => {
                           />
                         </td>
                         <td className="text-center">
-                        <button className="btn btn-sm btn-light" onClick={() => handleDelete(idx)} title="Study">
-                          <i className="bi bi-mortarboard" style={{color: 'black'}}></i>
+                        <button className="btn btn-sm btn-light" onClick={() => handleDelete(idx)} title="Delete">
+                          <i className="bi bi-trash" style={{color: 'black'}}></i>
                         </button>
                         </td>
                       </tr>
