@@ -136,9 +136,18 @@ const ResponsiveTable = ({ type = "student" }) => {
   };
   const [selectedYear, setSelectedYear] = useState("");
   const [selectedStatus, setSelectedStatus] = useState("");
+  // Add state for selected class and designation filter
+  const [selectedClass, setSelectedClass] = useState("");
+  const [selectedDesignation, setSelectedDesignation] = useState("");
 
   const filtered = data.filter((row) => {
     let match = true;
+    if (type === "student" && selectedClass) {
+      match = match && row.class === selectedClass;
+    }
+    if (type === "staff" && selectedDesignation) {
+      match = match && row.designation === selectedDesignation;
+    }
     if (type === "staff" && selectedYear) {
       match = match && row.department.includes(selectedYear.toString()); // You may want to change this logic if year is a separate field
     }
@@ -259,13 +268,35 @@ const ResponsiveTable = ({ type = "student" }) => {
                 </select>
                 {type === "student" && (
                   <>
-                    <select className="form-select form-select-sm w-auto">
-                      <option>Class</option>
-                      {classOptions.map((c) => <option key={c}>{c}</option>)}
+                    <select
+                      className="form-select form-select-sm w-auto"
+                      style={{ width: "180px", marginRight: "8px" }}
+                      value={selectedClass}
+                      onChange={e => setSelectedClass(e.target.value)}
+                    >
+                      <option value="">All Classes</option>
+                      {classOptions.map(cls => (
+                        <option key={cls} value={cls}>{cls}</option>
+                      ))}
                     </select>
                     <select className="form-select form-select-sm w-auto">
                       <option>Section</option>
                       {sectionOptions.map((s) => <option key={s}>{s}</option>)}
+                    </select>
+                  </>
+                )}
+                {type === "staff" && (
+                  <>
+                    <select
+                      className="form-select form-select-sm w-auto"
+                      style={{ width: "180px", marginRight: "8px" }}
+                      value={selectedDesignation}
+                      onChange={e => setSelectedDesignation(e.target.value)}
+                    >
+                      <option value="">All Designations</option>
+                      {designationOptions.map(des => (
+                        <option key={des} value={des}>{des}</option>
+                      ))}
                     </select>
                   </>
                 )}
